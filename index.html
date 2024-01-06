@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Scheduler POC</title>
+</head>
+
+<body>
+  <script type="module">
+    for (let i = 0; i < 100_000; i++) {
+
+      // scheduler.postTask(() => render(i))
+      render(i)
+    }
+
+    function render(i) {
+      const item = document.createElement('div')
+      item.innerText = `Item ${i}`
+      item.style.display = 'inline-block'
+      document.body.appendChild(item)
+    }
+  </script>
+</body>
+
+</html>
